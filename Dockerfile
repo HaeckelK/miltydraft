@@ -31,4 +31,6 @@ RUN composer install
 # TODO because I'm not using an apache server you need to go to
 # http://localhost:8000/draft.php?id=X to get the draft page to work
 
+# TODO docker run --rm -p 8444:8000 -v ${PWD}/src:/app delete-me
+
 CMD ["php", "-S", "0.0.0.0:8000"]
