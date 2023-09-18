@@ -60,6 +60,9 @@ $(document).ready(function() {
         request.open("POST", routes.generate);
         request.onreadystatechange = function () {
             if (request.readyState != 4 || request.status != 200) return;
+            
+            // Some debugging info
+            console.log(request.responseText);
 
             let data = JSON.parse(request.responseText);
 
