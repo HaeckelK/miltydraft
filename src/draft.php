@@ -398,6 +398,22 @@
         </div>
     </div>
 
+    <div class="popup" id="revert-popup">
+        <div class="content">
+            <!-- <p>
+                Are you sure you wish to draft the following <span id="confirm-category"></span>: <span id="confirm-value"></span>.<br />
+                This can't be undone.
+            </p> -->
+            <p>
+                Are you sure you wish to revert the draft to the previous state?<br />
+                This can't be undone.
+            </p>
+            <p>
+                <button id="revert-confirm">Revert</button>
+                <button id="revert-cancel">Cancel</button>
+            </p>
+        </div>
+    </div>
 
     <div id="loading">
         Loading. Please wait.<br />

@@ -67,7 +67,7 @@ $(document).ready(function() {
 
         $('#confirm-value').html(show_value);
 
-        $('#confirm-popup').show();
+        $('#revert-popup').show();
     })
 
     $('#confirm-cancel').on('click', function(e) {
@@ -103,6 +103,36 @@ $(document).ready(function() {
     $('#close-error').on('click', function(e) {
         $('#error-popup').hide();
     })
+
+    $('#revert-cancel').on('click', function(e) {
+        $('#revert-popup').hide();
+    });
+
+    $('#revert-confirm').on('click', function(e) {
+        // $('button.draft').hide();
+        $('#revert-popup').hide();
+
+        loading();
+        // $.ajax({
+        //     type: "POST",
+        //     url: window.routes.pick,
+        //     dataType: 'json',
+        //     data: draft_pick,
+        //     success: function(resp) {
+        //         if(resp.error) {
+        //             $('#error-message').html(resp.error);
+        //             $('#error-popup').show();
+
+        //             loading(false);
+        //         }
+
+        //         if(resp.success) {
+        //             window.draft = resp.draft;
+        //             refresh();
+        //         }
+        //     }
+        // })
+    });
 
 
     if(window.draft) {
@@ -276,8 +306,10 @@ function draft_status() {
         $('.drafted-by[data-category="' + log_item.category + '"][data-value="' + log_item.value + '"]').html(p.name).show();
         $btn.prop('disabled', true);
         $btn.parents('.option').addClass('picked');
-
+        
+        log += "<div>";
         log += '<p><strong>' + p.name + '</strong> picked <strong>' + show_value + '</strong></p>';
+        log += "</div>";
     }
 
     if(log != '') {
